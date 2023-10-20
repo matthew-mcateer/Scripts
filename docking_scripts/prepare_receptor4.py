@@ -64,7 +64,7 @@ if __name__ == '__main__':
         opt_list, args = getopt.getopt(sys.argv[1:], 'r:vo:A:Cp:U:eM:')
 
     except getopt.GetoptError as msg:
-        print('prepare_receptor4.py: ', msg)
+        print('prepare_receptor4.py: ', str(msg))
         usage()
         sys.exit(2)
 
