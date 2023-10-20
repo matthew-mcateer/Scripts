@@ -63,8 +63,8 @@ if __name__ == '__main__':
     try:
         opt_list, args = getopt.getopt(sys.argv[1:], 'r:vo:A:Cp:U:eM:')
 
-    except getopt.GetoptError, msg:
-        print('prepare_receptor4.py: %s' %msg)
+    except getopt.GetoptError as msg:
+        print('prepare_receptor4.py: ', msg)
         usage()
         sys.exit(2)
 
@@ -144,7 +144,7 @@ if __name__ == '__main__':
             if verbose: print('preserving charges on type->', t)
             if not len(t): continue
             ats = mol.allAtoms.get(lambda x: x.autodock_element==t)
-            if verbose: print("preserving charges on ", ats.name
+            if verbose: print("preserving charges on ", ats.name)
             for a in ats:
                 if a.chargeSet is not None:
                     preserved[a] = [a.chargeSet, a.charge]
